@@ -14,4 +14,6 @@ Vinícius Matheus Morales
 ### Principais mecânicas:
 - Andar com WASD
 - Atirar
+- Se for atingido por tiro, perde vida, a depender do tipo de tiro e das carecterísitcas do personagem
+- Se atingir um inimigo com tiro, o inimigo perde vida, a depender do tipo de tiro e das características do inimigo
 
