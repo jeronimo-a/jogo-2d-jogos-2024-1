@@ -2,13 +2,13 @@
 
 ## Jogo 2D
 
-Caroline Chaim
+**Caroline Chaim**
 
-Jerônimo de Abreu Afrange
+**Jerônimo de Abreu Afrange**
 
-Marcos Vinícius da Silva
+**Marcos Vinícius da Silva**
 
-Vinícius Matheus Morales
+**Vinícius Matheus Morales**
 
 ### Ideia do jogo:
 - Jogo **tipo** *rogue-like*
