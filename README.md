@@ -3,8 +3,11 @@
 ## Jogo 2D
 
 Caroline Chaim
+
 Jerônimo de Abreu Afrange
+
 Marcos Vinícius da Silva
+
 Vinícius Matheus Morales
 
 ### Ideia do jogo:
