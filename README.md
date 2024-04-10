@@ -10,6 +10,8 @@
 
 **Vinícius Matheus Morales**
 
+[**GDD**](https://app.milanote.com/1RTzUr1Wzn0O98?p=y5CPGqxa2u5)
+
 ### Ideia do jogo:
 - Jogo **tipo** *rogue-like*
 - Vista *top-down*
