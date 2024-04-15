@@ -71,8 +71,9 @@ sysinfo.txt
 /Return of the Hawk/Assets/StreamingAssets/aa.meta
 /Return of the Hawk/Assets/StreamingAssets/aa/*
 
-# Thirdparty assets
+# Big files
 /Return of the Hawk/Assets/Thirdparty/
+/Return of the Hawk/Assets/Sprites/
 
 # Rider generated files
 .idea/
