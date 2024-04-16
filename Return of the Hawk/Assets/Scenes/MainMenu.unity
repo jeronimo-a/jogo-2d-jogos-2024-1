@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1444703987}
     m_Modifications:
+    - target: {fileID: 1620587597455234264, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b8725034301a5bae6911019f0ab81411, type: 3}
     - target: {fileID: 3296053395173893764, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -215,6 +219,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuitButton
       objectReference: {fileID: 0}
+    - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bc41409ffacbab0dfbca09a7cb103466, type: 3}
+    - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3f3e83fbf7f626ab89bda65486c7a5b3, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -518,6 +530,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1444703987}
     m_Modifications:
+    - target: {fileID: 1620587597455234264, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1e6ee109929d8a7d888739da7c431d56, type: 3}
     - target: {fileID: 3296053395173893764, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -602,6 +618,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SettingsButton
       objectReference: {fileID: 0}
+    - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c95ce085e1dfd587388371bac7edff57, type: 3}
+    - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a77d3fb571461dcceaa841ede23a3955, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -792,6 +816,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1444703987}
     m_Modifications:
+    - target: {fileID: 1620587597455234264, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1f96232cc42008f2891be785e65d7a34, type: 3}
     - target: {fileID: 3296053395173893764, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -876,6 +904,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayButton
       objectReference: {fileID: 0}
+    - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a0634d88921d5e5949866a8a77a6c05b, type: 3}
+    - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: abe714c928896972ca6bfecb41c266a6, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
