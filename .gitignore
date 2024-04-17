@@ -73,9 +73,9 @@ sysinfo.txt
 
 # Big files
 /Return of the Hawk/Assets/Thirdparty/
+*.psd
 *.png
-*.png
-!*.png.meta
+!*.psd.meta
 !*.png.meta
 
 # Rider generated files
