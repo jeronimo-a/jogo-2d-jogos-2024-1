@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PauseMenuController : MonoBehaviour {
 
@@ -9,6 +10,8 @@ public class PauseMenuController : MonoBehaviour {
     public KeyCode pauseKey = KeyCode.Escape;
     public bool paused = false;
     public GameObject mainCanvas;
+    public TextMeshProUGUI currentScoreDisplay;
+    public int currentScore;
 
 
     public void QuitButton() {
@@ -30,5 +33,6 @@ public class PauseMenuController : MonoBehaviour {
             paused = true;
             mainCanvas.SetActive(true);
         }
+        currentScoreDisplay.text = currentScore.ToString();
     }
 }
