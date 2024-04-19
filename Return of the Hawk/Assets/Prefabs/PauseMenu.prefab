@@ -1174,11 +1174,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5082328330433116307, guid: c38e341c2f06de9fd9ecca94e4987704, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5082328330433116307, guid: c38e341c2f06de9fd9ecca94e4987704, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 188.78003
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649046423095408849, guid: c38e341c2f06de9fd9ecca94e4987704, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -211
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649046423095408849, guid: c38e341c2f06de9fd9ecca94e4987704, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 198
       objectReference: {fileID: 0}
     - target: {fileID: 6122971259707216415, guid: c38e341c2f06de9fd9ecca94e4987704, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1278,7 +1286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8826872585192757816, guid: c38e341c2f06de9fd9ecca94e4987704, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 202
+      value: 214
       objectReference: {fileID: 0}
     - target: {fileID: 8826872585192757816, guid: c38e341c2f06de9fd9ecca94e4987704, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1300,9 +1308,14 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4278238719
       objectReference: {fileID: 0}
+    - target: {fileID: 9215825991478646182, guid: c38e341c2f06de9fd9ecca94e4987704, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2944694430387268047, guid: c38e341c2f06de9fd9ecca94e4987704, type: 3}
+    - {fileID: 2729551425704532684, guid: c38e341c2f06de9fd9ecca94e4987704, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c38e341c2f06de9fd9ecca94e4987704, type: 3}
