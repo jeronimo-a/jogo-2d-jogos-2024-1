@@ -8,7 +8,8 @@ public class RoomController : MonoBehaviour {
 
     public Rigidbody2D player;
     public bool enemiesKilled = false;
-    public bool initialRoom;
+    public bool initialRoom = false;
+    public bool finalRoom = false;
 
     // Update is called once per frame
     void Update() {
@@ -19,7 +20,7 @@ public class RoomController : MonoBehaviour {
         if (!initialRoom) {
             changeRoom = changeRoom || player.position.y <= -2.5;
         }
-        changeRoom = changeRoom && enemiesKilled;
+        changeRoom = changeRoom && enemiesKilled && !finalRoom;
 
         if (changeRoom) {
             SceneManager.LoadScene(RoomSelector.GetRoom());

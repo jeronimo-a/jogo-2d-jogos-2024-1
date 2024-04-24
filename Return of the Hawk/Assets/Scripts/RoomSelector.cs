@@ -12,6 +12,7 @@ public class RoomSelector : MonoBehaviour {
     public string levelRoom5;
     public string levelFinalRoom;
     static string _levelFinalRoom;
+    public static int numberOfRoomsToPlay = 3;
 
     public static List<string> levelRooms;
 
@@ -27,7 +28,7 @@ public class RoomSelector : MonoBehaviour {
     }
 
     public static string GetRoom() {
-        if (levelRooms.Count == 2) {
+        if (levelRooms.Count == (5 - numberOfRoomsToPlay)) {
             return _levelFinalRoom;
         }
         return levelRooms.Pop();
