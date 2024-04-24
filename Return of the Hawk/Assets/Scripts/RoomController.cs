@@ -34,7 +34,9 @@ public class RoomController : MonoBehaviour {
         bool changeRoom = player.position.x >= 3.5;
         changeRoom = changeRoom || player.position.x <= -3.5;
         changeRoom = changeRoom || player.position.y >= 2.5;
-        changeRoom = changeRoom || player.position.y <= -2.5;
+        if (!initialRoom) {
+            changeRoom = changeRoom || player.position.y <= -2.5;
+        }
         changeRoom = changeRoom && enemiesKilled;
 
         if (changeRoom) {
