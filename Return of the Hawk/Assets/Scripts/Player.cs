@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        transform.position = new Vector2(0, 0);
+        transform.position = new Vector2(1, 0);
         rb.gravityScale = 0;
         rb.angularDrag = 0;
     }
