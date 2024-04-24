@@ -29,10 +29,10 @@ public class PauseMenuController : MonoBehaviour {
     }
 
     void Update() {
-        if (Input.GetKeyDown(pauseKey)) {
+        if (Input.GetKeyDown(pauseKey) || paused) {
             paused = true;
-            mainCanvas.SetActive(true);
         }
+        mainCanvas.SetActive(paused);
         currentScoreDisplay.text = currentScore.ToString();
     }
 }
