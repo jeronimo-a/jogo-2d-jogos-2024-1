@@ -81,5 +81,5 @@ sysinfo.txt
 # Rider generated files
 .idea/
 
-assets
+assets_out
 .vscode
