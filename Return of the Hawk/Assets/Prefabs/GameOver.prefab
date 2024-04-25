@@ -320,6 +320,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6374699660664071302}
+  - component: {fileID: 8963170641237076261}
   m_Layer: 0
   m_Name: GameOver
   m_TagString: Untagged
@@ -343,6 +344,24 @@ Transform:
   - {fileID: 2262228958653245288}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8963170641237076261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464425604224725521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74d97aadbc718c951a61022d5c220dae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenuScene: MainMenu
+  firstGameScene: Level_1_0
+  gameover: 0
+  mainCanvas: {fileID: 407871179150074039}
+  scoreDisplay: {fileID: 509041930148915282}
+  score: 0
 --- !u!1 &3706752654645710876
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,12 +773,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 35804a21b47fb2a77b17c3b876ebbd83, type: 3}
     - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8963170641237076261}
+    - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RetryButton
       objectReference: {fileID: 0}
     - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameOverScript, Assembly-CSharp
+      value: GameOverController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -892,12 +915,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 1a59ddf6b6b15ed229194a0ed89440c6, type: 3}
     - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8963170641237076261}
+    - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: QuitButton
       objectReference: {fileID: 0}
     - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameOverScript, Assembly-CSharp
+      value: GameOverController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1096,6 +1123,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c38e341c2f06de9fd9ecca94e4987704, type: 3}
+--- !u!114 &509041930148915282 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9215825991478646182, guid: c38e341c2f06de9fd9ecca94e4987704, type: 3}
+  m_PrefabInstance: {fileID: 8715954126618082804}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1433401851742598237 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7715015233444153769, guid: c38e341c2f06de9fd9ecca94e4987704, type: 3}

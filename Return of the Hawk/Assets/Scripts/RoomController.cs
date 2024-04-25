@@ -6,19 +6,22 @@ using UnityEngine.SceneManagement;
 
 public class RoomController : MonoBehaviour {
 
-    public Rigidbody2D player;
+    Rigidbody2D rbPlayer;
     public bool enemiesKilled = false;
     public bool initialRoom = false;
     public bool finalRoom = false;
 
-    // Update is called once per frame
+    void Start() {
+        rbPlayer = GetComponent<Rigidbody2D>();
+    }
+
     void Update() {
 
-        bool changeRoom = player.position.x >= 3.5;
-        changeRoom = changeRoom || player.position.x <= -3.5;
-        changeRoom = changeRoom || player.position.y >= 2.5;
+        bool changeRoom = rbPlayer.position.x >= 3.5;
+        changeRoom = changeRoom || rbPlayer.position.x <= -3.5;
+        changeRoom = changeRoom || rbPlayer.position.y >= 2.5;
         if (!initialRoom) {
-            changeRoom = changeRoom || player.position.y <= -2.5;
+            changeRoom = changeRoom || rbPlayer.position.y <= -2.5;
         }
         changeRoom = changeRoom && enemiesKilled && !finalRoom;
 
