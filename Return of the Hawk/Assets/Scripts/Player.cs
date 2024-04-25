@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     public float speed = 5.0f;
 
+    public Animator animator;
+
     private Rigidbody2D rb;
     
     void Start()
@@ -23,6 +25,7 @@ public class Player : MonoBehaviour
 
         Vector2 movement = new Vector2(horizontalInput, verticalInput).normalized * speed;
         rb.MovePosition(rb.position + movement * Time.fixedDeltaTime);
+        animator.SetFloat("Speed",(Mathf.Abs(horizontalInput)) + (Mathf.Abs(verticalInput)) );
     }
 
     void FixedUpdate()
