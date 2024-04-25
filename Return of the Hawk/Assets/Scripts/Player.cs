@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
 
         Vector2 movement = new Vector2(horizontalInput, verticalInput).normalized * speed;
         rb.MovePosition(rb.position + movement * Time.fixedDeltaTime);
-        animator.SetFloat("Speed",(Mathf.Abs(horizontalInput)) + (Mathf.Abs(verticalInput)) );
+        // animator.SetFloat("Speed",(Mathf.Abs(horizontalInput)) + (Mathf.Abs(verticalInput)));
     }
     
     void RotateTowardsMouse()
@@ -80,7 +80,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             health -= 10;
-            collision.gameObject.SetActive(false);
+            // collision.gameObject.SetActive(false);
         }
     }
 }
