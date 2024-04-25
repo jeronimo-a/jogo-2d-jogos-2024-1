@@ -2536,7 +2536,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5622517039794535301, guid: 4a2d97f89dac7277e8bb64d5d8b419bc, type: 3}
       propertyPath: initialRoom
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5622517039794535301, guid: 4a2d97f89dac7277e8bb64d5d8b419bc, type: 3}
       propertyPath: enemiesKilled
