@@ -59,7 +59,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             health -= 10;
-            collision.gameObject.SetActive(false);
+            // collision.gameObject.SetActive(false);
         }
     }
 }
