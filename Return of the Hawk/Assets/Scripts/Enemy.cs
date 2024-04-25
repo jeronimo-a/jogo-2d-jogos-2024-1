@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public float speed = 4.0f;
     public GameObject player;
+    public float health = 20.0f;
     
     private float angle;
     private Rigidbody2D rb;
@@ -13,9 +14,15 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        transform.position = new Vector2(-8.5f, 3f); // PROVISIONAL
         rb.gravityScale = 0;
         rb.angularDrag = 0;
+    }
+    
+    void StopMoving()
+    {
+        rb.velocity = Vector2.zero;
+        rb.simulated = false;
+        transform.rotation = Quaternion.identity;
     }
 
     void AutoMove()
@@ -36,5 +43,23 @@ public class Enemy : MonoBehaviour
     {
         AutoMove();
         AimToPlayer();
+    }
+
+    void Update()
+    {
+        if (health <= 0)
+            Destroy(gameObject);
+
+        if (player == null)
+            StopMoving();
+    }
+    
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            health -= 10;
+            collision.gameObject.SetActive(false);
+        }
     }
 }
