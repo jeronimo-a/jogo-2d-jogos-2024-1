@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1067853511714485354}
   - component: {fileID: 5113869772565771776}
-  - component: {fileID: 3083856253175991315}
+  - component: {fileID: 7119717339981196663}
   - component: {fileID: 2094312258894887582}
   m_Layer: 0
-  m_Name: BulletScriptingTest
-  m_TagString: PlayerBullet
+  m_Name: BulletEnemy
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 2964285175987542818}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.29425216, y: 0.15219389, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3083856253175991315
+--- !u!114 &7119717339981196663
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,9 +95,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2964285175987542818}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e207814d40c12db43b9f3a79f59d3580, type: 3}
+  m_Script: {fileID: 11500000, guid: 8063ccb90e527d24ea5d780dbfe4c250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
 --- !u!70 &2094312258894887582
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -130,6 +131,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: -0.005, y: 0.004}
+  m_Size: {x: 0.05, y: 0.2}
   m_Direction: 0

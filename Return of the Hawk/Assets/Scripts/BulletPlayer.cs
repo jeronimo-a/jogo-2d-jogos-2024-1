@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class BulletPlayer : MonoBehaviour
 {
     public float speed = 10.0f;
     
@@ -16,12 +16,6 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<Enemy>().health -= 10;
-            //Destroy(gameObject Bullet);
-            gameObject.SetActive(false);
-        }
-		else if (collision.gameObject.CompareTag("Player"))
-	    {
-            collision.gameObject.GetComponent<Player>().health -= 10;
             gameObject.SetActive(false);
         }
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float speed = 5.0f;
-    public float health = 100.0f;
+    public float health = 1000.0f;
     public float bulletSpeed = 10.0f;
     public bool canShoot = true;
     public float timeBetweenShots = 0.5f;
@@ -21,7 +21,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        transform.position = new Vector2(1, 0);
         rb.gravityScale = 0;
         rb.angularDrag = 0;
     }
@@ -46,7 +45,7 @@ public class Player : MonoBehaviour
     
     void Shoot()
     {
-        Instantiate(bullet, transform.position, transform.rotation);
+        Instantiate(bullet, transform.position - transform.up / 3, transform.rotation);
         bullet.SetActive(true);
         canShoot = false;
     }
@@ -54,7 +53,6 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         Move();
-        RotateTowardsMouse();
     }
 
     void Reload()
@@ -65,10 +63,13 @@ public class Player : MonoBehaviour
     void Update()
     {
         if (health <= 0)
+		{
             die_animation.SetFloat("Health",health);
-            this.GetComponent<Collider>().enabled = false;
+            // this.GetComponent<Collider>().enabled = false;
+			Destroy(gameObject);
+		}
 
-            //Destroy(gameObject);
+        RotateTowardsMouse();
 
         if (!canShoot)
         {
@@ -87,13 +88,7 @@ public class Player : MonoBehaviour
             Reload();
         
         // ONLY DAMAGE TEST
-        if (Input.GetKeyDown(KeyCode.T))
-            health -= 10;
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("EnemyBullet"))
-            health -= 10;
+        // if (Input.GetKeyDown(KeyCode.T))
+        //     health -= 10;
     }
 }

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8403361429524567882}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,13 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218096612552297070}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.9993386, w: -0.036365036}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: -0.06, y: -1.46, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -184.168}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!212 &4894954454377286413
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -100,13 +100,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a3a1c1549219994eb901a212f4ea971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  health: 100
+  speed: 2
+  health: 1000
   bulletSpeed: 10
   canShoot: 1
   timeBetweenShots: 0.5
-  bullet: {fileID: 2964285175987542818, guid: e72dbfa3d35155445bdb99df4fff8b33, type: 3}
-  animator: {fileID: 0}
+  bullet: {fileID: 2964285175987542818, guid: 72075471d4f9baa499d16de7f5c56d4e, type: 3}
+  walk_animation: {fileID: 0}
+  die_animation: {fileID: 0}
 --- !u!50 &4848723848192269409
 Rigidbody2D:
   serializedVersion: 4
