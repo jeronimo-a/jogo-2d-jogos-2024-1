@@ -102,6 +102,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   health: 100
+  bulletSpeed: 10
+  canShoot: 1
+  timeBetweenShots: 0.5
+  bullet: {fileID: 2964285175987542818, guid: e72dbfa3d35155445bdb99df4fff8b33, type: 3}
+  animator: {fileID: 0}
 --- !u!50 &4848723848192269409
 Rigidbody2D:
   serializedVersion: 4
