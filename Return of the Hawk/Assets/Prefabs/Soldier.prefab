@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5113499809424343227}
   m_Layer: 0
   m_Name: Soldier
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,6 +102,9 @@ MonoBehaviour:
   speed: 4
   player: {fileID: 218096612552297070, guid: 4a2d97f89dac7277e8bb64d5d8b419bc, type: 3}
   health: 20
+  canShoot: 1
+  timeBetweenShots: 0.5
+  bullet: {fileID: 2964285175987542818, guid: ea3506cdfc13d3046ae05583fc0f071e, type: 3}
 --- !u!50 &2956220874483115394
 Rigidbody2D:
   serializedVersion: 4
