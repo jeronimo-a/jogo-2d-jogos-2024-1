@@ -5,15 +5,14 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float speed = 4.0f;
-    public GameObject player;
     public float health = 20.0f;
     public bool canShoot = true;
     public float timeBetweenShots = 0.5f;
     
     public GameObject bullet;
     
-    private float angle;
     private float timer = 0;
+    private GameObject player;
     private Rigidbody2D rb;
     
     void Start()
@@ -21,6 +20,7 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0;
         rb.angularDrag = 0;
+        player = GameObject.Find("Player");
     }
     
     void StopMoving()
@@ -38,14 +38,14 @@ public class Enemy : MonoBehaviour
 
     void AimToPlayer()
     {
-        Vector3 rotation = player.transform.position - transform.position;
-        float angle = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg + 90f;
+        Vector3 direction = player.transform.position - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90f;
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }
     
     void Shoot()
     {
-        Instantiate(bullet, transform.position, transform.rotation);
+        Instantiate(bullet, transform.position - transform.up, transform.rotation);
         bullet.SetActive(true);
         canShoot = false;
     }
@@ -53,7 +53,6 @@ public class Enemy : MonoBehaviour
     void FixedUpdate()
     {
         AutoMove();
-        AimToPlayer();
     }
 
     void Update()
@@ -62,7 +61,10 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
 
         if (player == null)
+        {
             StopMoving();
+            return;
+        }
 
         if (!canShoot)
         {
@@ -76,11 +78,7 @@ public class Enemy : MonoBehaviour
         
         if (canShoot)
             Shoot();
-    }
-    
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("PlayerBullet"))
-            health -= 10;
+
+        AimToPlayer();
     }
 }
