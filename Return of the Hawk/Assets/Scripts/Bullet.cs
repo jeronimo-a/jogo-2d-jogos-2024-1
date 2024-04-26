@@ -16,6 +16,7 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<Enemy>().health -= 10;
+            //Destroy(gameObject Bullet);
             gameObject.SetActive(false);
         }
 		else if (collision.gameObject.CompareTag("Player"))

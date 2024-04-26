@@ -11,7 +11,8 @@ public class Player : MonoBehaviour
     public float timeBetweenShots = 0.5f;
     
     public GameObject bullet;
-    public Animator animator;
+    public Animator walk_animation;
+    public Animator die_animation;
 
     private float timer = 0;
 
@@ -32,7 +33,7 @@ public class Player : MonoBehaviour
 
         Vector2 movement = new Vector2(horizontalInput, verticalInput).normalized * speed;
         rb.MovePosition(rb.position + movement * Time.fixedDeltaTime);
-        // animator.SetFloat("Speed",(Mathf.Abs(horizontalInput)) + (Mathf.Abs(verticalInput)));
+        walk_animation.SetFloat("Speed",(Mathf.Abs(horizontalInput)) + (Mathf.Abs(verticalInput)));
     }
     
     void RotateTowardsMouse()
@@ -64,7 +65,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         if (health <= 0)
-            Destroy(gameObject);
+            die_animation.SetFloat("Health",health);
+            this.GetComponent<Collider>().enabled = false;
+
+            //Destroy(gameObject);
 
         if (!canShoot)
         {
