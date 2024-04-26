@@ -7,8 +7,13 @@ public class Enemy : MonoBehaviour
     public float speed = 4.0f;
     public GameObject player;
     public float health = 20.0f;
+    public bool canShoot = true;
+    public float timeBetweenShots = 0.5f;
+    
+    public GameObject bullet;
     
     private float angle;
+    private float timer = 0;
     private Rigidbody2D rb;
     
     void Start()
@@ -33,10 +38,16 @@ public class Enemy : MonoBehaviour
 
     void AimToPlayer()
     {
-        Vector2 direction = player.transform.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
-        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed * Time.fixedDeltaTime);
+        Vector3 rotation = player.transform.position - transform.position;
+        float angle = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg + 90f;
+        transform.rotation = Quaternion.Euler(0, 0, angle);
+    }
+    
+    void Shoot()
+    {
+        Instantiate(bullet, transform.position, transform.rotation);
+        bullet.SetActive(true);
+        canShoot = false;
     }
 
     void FixedUpdate()
@@ -52,14 +63,24 @@ public class Enemy : MonoBehaviour
 
         if (player == null)
             StopMoving();
+
+        if (!canShoot)
+        {
+            timer += Time.deltaTime;
+            if (timer >= timeBetweenShots)
+            {
+                canShoot = true;
+                timer = 0;
+            }
+        }
+        
+        if (canShoot)
+            Shoot();
     }
     
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
+        if (collision.gameObject.CompareTag("PlayerBullet"))
             health -= 10;
-            // collision.gameObject.SetActive(false);
-        }
     }
 }

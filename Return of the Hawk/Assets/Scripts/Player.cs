@@ -6,8 +6,14 @@ public class Player : MonoBehaviour
 {
     public float speed = 5.0f;
     public float health = 100.0f;
-
+    public float bulletSpeed = 10.0f;
+    public bool canShoot = true;
+    public float timeBetweenShots = 0.5f;
+    
+    public GameObject bullet;
     public Animator animator;
+
+    private float timer = 0;
 
     private Rigidbody2D rb;
     
@@ -32,20 +38,16 @@ public class Player : MonoBehaviour
     void RotateTowardsMouse()
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 direction = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
-        transform.up = -direction;
+        Vector3 rotation = mousePos - transform.position;
+        float angle = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg + 90f;
+        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
     
     void Shoot()
     {
-        GameObject bullet = ObjectPool.SharedInstance.GetPooledObject();
-        if (bullet != null)
-        {
-            bullet.transform.position = transform.position;
-            bullet.transform.rotation = transform.rotation;
-            bullet.GetComponent<Rigidbody2D>().velocity = transform.up * 10;
-            bullet.SetActive(true);
-        }
+        Instantiate(bullet, transform.position, transform.rotation);
+        bullet.SetActive(true);
+        canShoot = false;
     }
 
     void FixedUpdate()
@@ -56,15 +58,25 @@ public class Player : MonoBehaviour
 
     void Reload()
     {
-        ObjectPool.SharedInstance.pooledObjects.ForEach(obj => obj.SetActive(false));;
+        return;
     }
 
     void Update()
     {
         if (health <= 0)
             Destroy(gameObject);
+
+        if (!canShoot)
+        {
+            timer += Time.deltaTime;
+            if (timer >= timeBetweenShots)
+            {
+                canShoot = true;
+                timer = 0;
+            }
+        }
         
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
+        if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && canShoot)
             Shoot();
         
         if (Input.GetKeyDown(KeyCode.R))
@@ -77,10 +89,7 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
+        if (collision.gameObject.CompareTag("EnemyBullet"))
             health -= 10;
-            // collision.gameObject.SetActive(false);
-        }
     }
 }
