@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float speed = 5.0f;
-    public float health = 1000.0f;
-    public float bulletSpeed = 10.0f;
-    public bool canShoot = true;
-    public float timeBetweenShots = 0.5f;
+    private float health = 1000.0f;
+    
+	private float speed = 3.0f;
+    private bool canShoot = true;
+    private float timeBetweenShots = 0.3f;
     
     public GameObject bullet;
     public Animator walk_animation;
     public Animator die_animation;
 
-    private float timer = 0;
+    private float timer = 0.0f;
 
     private Rigidbody2D rb;
+
+	public void TakeDamage(float damage)
+	{
+		health -= damage;
+	}
     
     void Start()
     {
@@ -45,9 +50,9 @@ public class Player : MonoBehaviour
     
     void Shoot()
     {
+        canShoot = false;
         Instantiate(bullet, transform.position - transform.up / 3, transform.rotation);
         bullet.SetActive(true);
-        canShoot = false;
     }
 
     void FixedUpdate()
@@ -77,7 +82,7 @@ public class Player : MonoBehaviour
             if (timer >= timeBetweenShots)
             {
                 canShoot = true;
-                timer = 0;
+                timer = 0.0f;
             }
         }
         
