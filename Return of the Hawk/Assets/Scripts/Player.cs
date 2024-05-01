@@ -65,6 +65,21 @@ public class Player : MonoBehaviour
         return;
     }
 
+	void OnCollisionEnter2D(Collision2D other)
+    {
+        
+        if (other.gameObject.CompareTag("Option"))
+        {
+            GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("Option");
+
+        foreach (GameObject obj in objectsWithTag)
+        {
+            Destroy(obj);
+        }
+
+        }
+    }
+
     void Update()
     {
         if (health <= 0)
