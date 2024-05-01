@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4848723848192269409}
   - component: {fileID: 5622517039794535301}
   - component: {fileID: 8403361429524567882}
+  - component: {fileID: 3358249028607794430}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -100,14 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a3a1c1549219994eb901a212f4ea971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  health: 1000
-  bulletSpeed: 10
-  canShoot: 1
-  timeBetweenShots: 0.5
   bullet: {fileID: 2964285175987542818, guid: 72075471d4f9baa499d16de7f5c56d4e, type: 3}
-  walk_animation: {fileID: 0}
-  die_animation: {fileID: 0}
+  walkAnimation: {fileID: 3358249028607794430}
+  dieAnimation: {fileID: 3358249028607794430}
 --- !u!50 &4848723848192269409
 Rigidbody2D:
   serializedVersion: 4
@@ -185,3 +181,24 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.13
+--- !u!95 &3358249028607794430
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218096612552297070}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 87451306596a06b46b30b51e15a8812a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -1169,7 +1169,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1055003365}
     - target: {fileID: 42512395677746848, guid: 4a2d97f89dac7277e8bb64d5d8b419bc, type: 3}
+      propertyPath: dieAnimation
+      value: 
+      objectReference: {fileID: 1055003365}
+    - target: {fileID: 42512395677746848, guid: 4a2d97f89dac7277e8bb64d5d8b419bc, type: 3}
       propertyPath: die_animation
+      value: 
+      objectReference: {fileID: 1055003365}
+    - target: {fileID: 42512395677746848, guid: 4a2d97f89dac7277e8bb64d5d8b419bc, type: 3}
+      propertyPath: walkAnimation
       value: 
       objectReference: {fileID: 1055003365}
     - target: {fileID: 42512395677746848, guid: 4a2d97f89dac7277e8bb64d5d8b419bc, type: 3}

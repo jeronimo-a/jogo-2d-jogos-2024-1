@@ -4,27 +4,30 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private float health = 1000.0f;
+    public GameObject bullet;
     
+    private Animator walkAnimation;
+    private Animator dieAnimation;
+    private GameManager gameManager;
+    private float health;
 	private float speed = 3.0f;
     private bool canShoot = true;
     private float timeBetweenShots = 0.3f;
-    
-    public GameObject bullet;
-    public Animator walk_animation;
-    public Animator die_animation;
-
     private float timer = 0.0f;
-
     private Rigidbody2D rb;
 
 	public void TakeDamage(float damage)
 	{
-		health -= damage;
+        gameManager.TakeDamage(damage);
+        health = gameManager.GetPlayerHealth();
 	}
     
     void Start()
     {
+        walkAnimation = GetComponent<Animator>();
+        dieAnimation = GetComponent<Animator>();
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        health = gameManager.GetPlayerHealth();
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0;
         rb.angularDrag = 0;
@@ -37,7 +40,7 @@ public class Player : MonoBehaviour
 
         Vector2 movement = new Vector2(horizontalInput, verticalInput).normalized * speed;
         rb.MovePosition(rb.position + movement * Time.fixedDeltaTime);
-        walk_animation.SetFloat("Speed",(Mathf.Abs(horizontalInput)) + (Mathf.Abs(verticalInput)));
+        walkAnimation.SetFloat("Speed",(Mathf.Abs(horizontalInput)) + (Mathf.Abs(verticalInput)));
     }
     
     void RotateTowardsMouse()
@@ -57,6 +60,9 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (health <= 0)
+            return;
+        
         Move();
     }
 
@@ -72,10 +78,10 @@ public class Player : MonoBehaviour
         {
             GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("Option");
 
-        foreach (GameObject obj in objectsWithTag)
-        {
-            Destroy(obj);
-        }
+            foreach (GameObject obj in objectsWithTag)
+            {
+                Destroy(obj);
+            }
 
         }
     }
@@ -84,10 +90,11 @@ public class Player : MonoBehaviour
     {
         if (health <= 0)
 		{
-            die_animation.SetFloat("Health",health);
-            // this.GetComponent<Collider>().enabled = false;
-			Destroy(gameObject);
-		}
+            dieAnimation.SetFloat("Health", health);
+            // GetComponent<Collider>().enabled = false;
+			// Destroy(gameObject);
+            return;
+        }
 
         RotateTowardsMouse();
 
@@ -108,7 +115,7 @@ public class Player : MonoBehaviour
             Reload();
         
         // ONLY DAMAGE TEST
-        // if (Input.GetKeyDown(KeyCode.T))
-        //     health -= 10;
+        if (Input.GetKeyDown(KeyCode.T))
+            TakeDamage(100.0f);
     }
 }
