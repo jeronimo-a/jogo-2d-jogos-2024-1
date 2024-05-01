@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed = 4.0f;
     public float health = 20.0f;
-    public bool canShoot = true;
-    public float timeBetweenShots = 0.5f;
+    
+	private float speed = 1.0f;
+    private bool canShoot = true;
+    private float timeBetweenShots = 0.5f;
     
     public GameObject bullet;
     
-    private float timer = 0;
+    private float timer = 0.0f;
     private GameObject player;
     private Rigidbody2D rb;
+
+	public void TakeDamage(float damage)
+	{
+		health -= damage;
+	}
     
     void Start()
     {
@@ -72,7 +78,7 @@ public class Enemy : MonoBehaviour
             if (timer >= timeBetweenShots)
             {
                 canShoot = true;
-                timer = 0;
+                timer = 0.0f;
             }
         }
         
