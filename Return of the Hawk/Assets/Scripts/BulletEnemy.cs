@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class BulletEnemy : MonoBehaviour
 {
-    public float speed = 10.0f;
+    private float speed = 10.0f;
+    private float damage = 10.0f;
     
     void FixedUpdate()
     {
         transform.position -= transform.up * speed * Time.fixedDeltaTime;
     }
     
-	void OnCollisionEnter2D(Collision2D collision)
+	void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<Player>().health -= 10;
+            collision.gameObject.GetComponent<Player>().TakeDamage(damage);
             gameObject.SetActive(false);
         }
+        
+        Destroy(gameObject);
     }
 }
