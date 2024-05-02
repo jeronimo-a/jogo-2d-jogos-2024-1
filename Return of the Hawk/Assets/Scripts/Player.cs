@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     private Animator dieAnimation;
     private GameManager gameManager;
     private float health;
+    private float damage = 10.0f;
 	private float speed = 3.0f;
     private bool canShoot = true;
     private float timeBetweenShots = 0.3f;
@@ -27,9 +28,14 @@ public class Player : MonoBehaviour
 
 	public void TakeDamage(float damage)
 	{
-        gameManager.TakeDamage(damage, "Player");
+        gameManager.TakeDamage(damage);
         health = gameManager.GetPlayerHealth();
 	}
+
+    public float GetDamage()
+    {
+        return damage;
+    }
     
     void Start()
     {

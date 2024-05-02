@@ -11,6 +11,11 @@ public class BulletPlayer : MonoBehaviour
     {
         transform.position -= transform.up * speed * Time.fixedDeltaTime;
     }
+
+    public void UpdateDamage()
+    {
+        damage = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetDamage();
+    }
     
 	void OnTriggerEnter2D(Collider2D collision)
     {
