@@ -4,25 +4,27 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float health = 1f;
-    
-	private float speed = 1.0f;
+    public GameObject bullet;
+
+    private float health;
+	  private float speed = 1.0f;
     private bool canShoot = true;
     private float timeBetweenShots = 0.5f;
-    
-    public GameObject bullet;
-    
     private float timer = 0.0f;
     private GameObject player;
     private Rigidbody2D rb;
+    private GameManager gameManager;
 
 	public void TakeDamage(float damage)
 	{
-		health -= damage;
+        gameManager.TakeDamage(damage, "Enemy");
+        health = gameManager.GetEnemyHealth();
 	}
     
     void Start()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        health = gameManager.GetEnemyHealth();
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0;
         rb.angularDrag = 0;

@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
 
 	public void TakeDamage(float damage)
 	{
-        gameManager.TakeDamage(damage);
+        gameManager.TakeDamage(damage, "Player");
         health = gameManager.GetPlayerHealth();
 	}
     
