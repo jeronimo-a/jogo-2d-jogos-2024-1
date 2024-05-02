@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private float playerMaxHealth = 1000.0f;
+    private float playerArmor = 0.0f;
     private float playerHealth = 1000.0f;
     private float playerDamage = 10.0f;
     private int playerMagazineAmmo = 12;
