@@ -8,12 +8,13 @@ public class Enemy : MonoBehaviour
 
     private float health = 20.0f;
     private float damage = 10.0f;
-	  private float speed = 1.0f;
+	private float speed = 1.0f;
     private bool canShoot = true;
     private float timeBetweenShots = 0.5f;
     private float timer = 0.0f;
     private GameObject player;
     private Rigidbody2D rb;
+    private GameManager gameManager;
 
 	public void TakeDamage(float damage)
 	{
@@ -36,6 +37,7 @@ public class Enemy : MonoBehaviour
         rb.gravityScale = 0;
         rb.angularDrag = 0;
         player = GameObject.Find("Player");
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
     
     void StopMoving()
@@ -67,7 +69,8 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        AutoMove();
+        if (!gameManager.IsPaused())
+            AutoMove();
     }
 
     void Update()
@@ -91,9 +94,10 @@ public class Enemy : MonoBehaviour
             }
         }
         
-        if (canShoot)
+        if (canShoot && !gameManager.IsPaused())
             Shoot();
 
-        AimToPlayer();
+        if (!gameManager.IsPaused())
+            AimToPlayer();
     }
 }
