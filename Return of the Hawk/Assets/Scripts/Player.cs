@@ -17,6 +17,15 @@ public class Player : MonoBehaviour
     private float timer = 0.0f;
     private Rigidbody2D rb;
 
+    private bool isMoving;
+
+    AudioManager audioManager;
+
+    private void Awake(){
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
+
 	public void TakeDamage(float damage)
 	{
         gameManager.TakeDamage(damage);
@@ -37,6 +46,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0;
         rb.angularDrag = 0;
+        isMoving = false;
     }
 
     void Move()
@@ -44,9 +54,15 @@ public class Player : MonoBehaviour
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
 
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) ){
+            // audioManager.PlaySFX(audioManager.walk);
+        }
+
         Vector2 movement = new Vector2(horizontalInput, verticalInput).normalized * speed;
         rb.MovePosition(rb.position + movement * Time.fixedDeltaTime);
         walkAnimation.SetFloat("Speed",(Mathf.Abs(horizontalInput)) + (Mathf.Abs(verticalInput)));
+        
+    
     }
     
     void RotateTowardsMouse()
@@ -62,6 +78,7 @@ public class Player : MonoBehaviour
         canShoot = false;
         Instantiate(bullet, transform.position - transform.up / 3, transform.rotation);
         bullet.SetActive(true);
+        audioManager.PlaySFX(audioManager.shot);
     }
 
     void FixedUpdate()

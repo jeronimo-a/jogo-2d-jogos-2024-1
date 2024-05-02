@@ -284,6 +284,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGameGUI
       objectReference: {fileID: 0}
+    - target: {fileID: 3745601608249896289, guid: 19d0f7185dcc9ef1d89fdf4c2f0d7a48, type: 3}
+      propertyPath: choiceRoom
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745601608249896289, guid: 19d0f7185dcc9ef1d89fdf4c2f0d7a48, type: 3}
+      propertyPath: roomController
+      value: 
+      objectReference: {fileID: 1599604221}
     - target: {fileID: 6128134278514375422, guid: 19d0f7185dcc9ef1d89fdf4c2f0d7a48, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -347,6 +355,7 @@ GameObject:
   m_Component:
   - component: {fileID: 222008877}
   - component: {fileID: 222008876}
+  - component: {fileID: 222008878}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -386,6 +395,24 @@ Transform:
   - {fileID: 880072445}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &222008878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222008875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b99f1f260f509e622ad7ceee44d48db2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelRoom1: Level_2_1
+  levelRoom2: Level_2_2
+  levelRoom3: Level_2_3
+  levelRoom4: Level_2_4
+  levelRoom5: Level_2_5
+  levelFinalRoom: Level_2_choices
 --- !u!1 &577479520
 GameObject:
   m_ObjectHideFlags: 0
@@ -3040,6 +3067,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 69639496}
   m_SourcePrefab: {fileID: 100100000, guid: 4a2d97f89dac7277e8bb64d5d8b419bc, type: 3}
+--- !u!114 &1599604221 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5622517039794535301, guid: 4a2d97f89dac7277e8bb64d5d8b419bc, type: 3}
+  m_PrefabInstance: {fileID: 1599604220}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69639495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af5613dfc3428c2d08f3543f137da8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1919956157
 GameObject:
   m_ObjectHideFlags: 0

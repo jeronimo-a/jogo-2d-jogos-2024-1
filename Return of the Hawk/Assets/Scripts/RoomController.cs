@@ -9,6 +9,7 @@ public class RoomController : MonoBehaviour {
     Rigidbody2D rbPlayer;
     public bool enemiesKilled = false;
     public bool initialRoom = false;
+    public bool choiceMade = false;
     public bool finalRoom = false;
 
     void Start() {
@@ -23,7 +24,7 @@ public class RoomController : MonoBehaviour {
         if (!initialRoom) {
             changeRoom = changeRoom || rbPlayer.position.y <= -2.5;
         }
-        changeRoom = changeRoom && enemiesKilled && !finalRoom;
+        changeRoom = changeRoom && enemiesKilled && !finalRoom && choiceMade;
 
         if (changeRoom) {
             SceneManager.LoadScene(RoomSelector.GetRoom());
