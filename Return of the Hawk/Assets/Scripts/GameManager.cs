@@ -26,11 +26,6 @@ public class GameManager : MonoBehaviour
         paused = pause;
     }
 
-    public void GameOver()
-    {
-        gameOver = true;
-    }
-
     public bool IsGameOver()
     {
         return gameOver;
@@ -131,5 +126,11 @@ public class GameManager : MonoBehaviour
         enemyDamage *= 1.1f;
         GameObject.FindGameObjectWithTag("EnemyBullet").GetComponent<BulletEnemy>().UpdateDamage();
         GameObject.FindGameObjectWithTag("PlayerBullet").GetComponent<BulletPlayer>().UpdateDamage();
+    }
+
+    void Update()
+    {
+        if (playerHealth <= 0)
+            gameOver = true;
     }
 }

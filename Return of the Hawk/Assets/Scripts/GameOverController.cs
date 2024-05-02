@@ -12,6 +12,7 @@ public class GameOverController : MonoBehaviour
     public GameObject mainCanvas;
     public TextMeshProUGUI scoreDisplay;
     public int score;
+    private GameManager gameManager;
 
 
     public void QuitButton() {
@@ -26,10 +27,12 @@ public class GameOverController : MonoBehaviour
     void Start() {
         gameover = false;
         mainCanvas.SetActive(false);
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     void Update() {
         mainCanvas.SetActive(gameover);
         scoreDisplay.text = score.ToString();
+        gameover = gameManager.IsGameOver();
     }
 }
