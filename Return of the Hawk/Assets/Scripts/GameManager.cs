@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private float playerMaxHealth = 1000.0f;
+    private float playerArmor = 0.0f;
     private float playerHealth = 1000.0f;
     private float playerDamage = 10.0f;
     private int playerMagazineAmmo = 12;
@@ -16,6 +17,18 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void ResetPlayerHealth()
+    {
+        playerHealth = playerMaxHealth;
+        Debug.Log("curou");
+    }
+
+    public void IncrementPlayerArmor()
+    {
+        playerArmor += 1000;
+        Debug.Log("armor");
     }
     
     public float GetPlayerHealth()
