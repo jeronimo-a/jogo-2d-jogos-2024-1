@@ -135,6 +135,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGameGUI
       objectReference: {fileID: 0}
+    - target: {fileID: 3745601608249896289, guid: 19d0f7185dcc9ef1d89fdf4c2f0d7a48, type: 3}
+      propertyPath: choiceRoom
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745601608249896289, guid: 19d0f7185dcc9ef1d89fdf4c2f0d7a48, type: 3}
+      propertyPath: roomController
+      value: 
+      objectReference: {fileID: 1638857274}
     - target: {fileID: 6128134278514375422, guid: 19d0f7185dcc9ef1d89fdf4c2f0d7a48, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2220,6 +2228,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 836809055}
   m_SourcePrefab: {fileID: 100100000, guid: 4a2d97f89dac7277e8bb64d5d8b419bc, type: 3}
+--- !u!114 &1638857274 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5622517039794535301, guid: 4a2d97f89dac7277e8bb64d5d8b419bc, type: 3}
+  m_PrefabInstance: {fileID: 1638857273}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836809054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af5613dfc3428c2d08f3543f137da8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1647365777
 GameObject:
   m_ObjectHideFlags: 0

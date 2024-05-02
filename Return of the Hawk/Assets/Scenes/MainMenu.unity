@@ -657,7 +657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8fe4a663402277eaa9d948da1d1e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstGameScene: Level_1_0
+  firstGameScene: Level_0_choices
   highscore: 0
   highscoreNumberText: {fileID: 2028498926}
 --- !u!1001 &1414355456
@@ -1512,7 +1512,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1738337383}
-  musicClip: {fileID: 8300000, guid: 9d734a218af4f114584f4cbd382896a8, type: 3}
+  SFXSource: {fileID: 0}
+  background: {fileID: 0}
+  shot: {fileID: 0}
 --- !u!114 &2028498926 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9215825991478646182, guid: c38e341c2f06de9fd9ecca94e4987704, type: 3}
