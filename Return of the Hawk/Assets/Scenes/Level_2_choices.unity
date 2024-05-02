@@ -1437,7 +1437,7 @@ MonoBehaviour:
   levelRoom3: Level_3_3
   levelRoom4: Level_3_4
   levelRoom5: Level_3_5
-  levelFinalRoom: Level_3_BOSS
+  levelFinalRoom: Level_3_choices
 --- !u!1 &1716456397
 GameObject:
   m_ObjectHideFlags: 0
