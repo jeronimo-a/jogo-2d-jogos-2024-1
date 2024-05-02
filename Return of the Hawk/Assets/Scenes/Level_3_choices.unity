@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGameGUI
       objectReference: {fileID: 0}
+    - target: {fileID: 3745601608249896289, guid: 19d0f7185dcc9ef1d89fdf4c2f0d7a48, type: 3}
+      propertyPath: choiceRoom
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6128134278514375422, guid: 19d0f7185dcc9ef1d89fdf4c2f0d7a48, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
