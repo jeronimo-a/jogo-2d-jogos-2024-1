@@ -23,6 +23,12 @@ public class GameManager : MonoBehaviour
         playerHealth = maxPlayerHealth;
         Debug.Log("curou");
     }
+
+    public void IncrementPlayerArmor()
+    {
+        playerArmor += 1000;
+        Debug.Log("armor");
+    }
     
     public float GetPlayerHealth()
     {

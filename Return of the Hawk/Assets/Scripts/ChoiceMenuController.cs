@@ -27,5 +27,6 @@ public class ChoiceMenuController : MonoBehaviour {
     public void RightButton() {
         mainCanvas.SetActive(false);
         roomController.choiceMade = true;
+        gameManager.IncrementPlayerArmor();
     }
 }
