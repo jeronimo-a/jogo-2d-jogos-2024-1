@@ -9,20 +9,20 @@ public class ChoiceMenuController : MonoBehaviour {
     public TextMeshProUGUI currentScoreDisplay;
     public int currentScore;
     public bool choiceRoom;
+    public RoomController roomController;
 
     void Start() {
-        mainCanvas.SetActive(choiceRoom);        
-    }
-
-    void Update() {
-        
+        mainCanvas.SetActive(choiceRoom);
+        roomController.choiceMade = !choiceRoom;
     }
 
     public void LeftButton() {
         mainCanvas.SetActive(false);
+        roomController.choiceMade = true;
     }
 
     public void RightButton() {
         mainCanvas.SetActive(false);
+        roomController.choiceMade = true;
     }
 }
