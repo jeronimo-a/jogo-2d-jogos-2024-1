@@ -12,6 +12,11 @@ public class BulletEnemy : MonoBehaviour
         transform.position -= transform.up * speed * Time.fixedDeltaTime;
     }
     
+    public void UpdateDamage()
+    {
+        damage = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>().GetDamage();
+    }
+    
 	void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
