@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
-    private static float maxPlayerHealth = 1000.0f;
-
-    private float playerArmor = 0.0f;
-    private float playerHealth = maxPlayerHealth;
+    private float playerMaxHealth = 1000.0f;
+    private float playerHealth = 1000.0f;
+    private float playerDamage = 10.0f;
     private int playerMagazineAmmo = 12;
     private int playerReserveAmmo = 24;
+    private float enemyMaxHealth = 20.0f;
     private float enemyHealth = 20.0f;
+    private float enemyDamage = 10.0f;
     
     void Awake()
     {
@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetPlayerHealth()
     {
-        playerHealth = maxPlayerHealth;
+        playerHealth = playerMaxHealth;
         Debug.Log("curou");
     }
 
@@ -33,6 +33,20 @@ public class GameManager : MonoBehaviour
     public float GetPlayerHealth()
     {
         return playerHealth;
+    }
+    
+    public void HealPlayer(float health)
+    {
+        playerHealth += health;
+        if (playerHealth > playerMaxHealth)
+        {
+            playerHealth = playerMaxHealth;
+        }
+    }
+    
+    public float GetPlayerDamage()
+    {
+        return playerDamage;
     }
     
     public int GetPlayerMagazineAmmo()
@@ -50,20 +64,9 @@ public class GameManager : MonoBehaviour
         return playerMagazineAmmo + playerReserveAmmo;
     }
     
-    public float GetEnemyHealth()
+    public void TakeDamage(float damage)
     {
-        return enemyHealth;
-    }
-    
-    public void TakeDamage(float damage, string source)
-    {
-        if (source == "Player")
-        {
-            playerHealth -= damage;
-        } else if (source == "Enemy")
-        {
-            enemyHealth -= damage;
-        }
+        playerHealth -= damage;
     }
     
     public void PickUpAmmo(int ammo = 12)
@@ -85,5 +88,25 @@ public class GameManager : MonoBehaviour
             playerMagazineAmmo += playerReserveAmmo;
             playerReserveAmmo = 0;
         }
+    }
+    
+    public float GetEnemyHealth()
+    {
+        return enemyHealth;
+    }
+    
+    public float GetEnemyDamage()
+    {
+        return enemyDamage;
+    }
+    
+    public void ReplayabilityMultiplier()
+    {
+        playerMaxHealth *= 1.2f;
+        playerDamage *= 1.2f;
+        enemyMaxHealth *= 1.1f;
+        enemyDamage *= 1.1f;
+        GameObject.FindGameObjectWithTag("EnemyBullet").GetComponent<BulletEnemy>().UpdateDamage();
+        GameObject.FindGameObjectWithTag("PlayerBullet").GetComponent<BulletPlayer>().UpdateDamage();
     }
 }

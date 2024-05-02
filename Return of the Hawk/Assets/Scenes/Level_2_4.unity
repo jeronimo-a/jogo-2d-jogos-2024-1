@@ -2099,7 +2099,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 925852088}
-  - {fileID: 1879949440}
   - {fileID: 1890857276}
   - {fileID: 799918210}
   - {fileID: 777644834}
@@ -2253,7 +2252,7 @@ GameObject:
   - component: {fileID: 1879949440}
   m_Layer: 0
   m_Name: SoliderParent
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2274,7 +2273,7 @@ Transform:
   - {fileID: 414553607}
   - {fileID: 1889551705}
   - {fileID: 755069990}
-  m_Father: {fileID: 1647365779}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1889551704 stripped
 GameObject:
@@ -3294,3 +3293,4 @@ SceneRoots:
   - {fileID: 818023837}
   - {fileID: 106141785}
   - {fileID: 756398892}
+  - {fileID: 1879949440}
