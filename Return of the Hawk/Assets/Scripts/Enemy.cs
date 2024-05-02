@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float health = 20.0f;
+    public float health = 1f;
     
 	private float speed = 1.0f;
     private bool canShoot = true;

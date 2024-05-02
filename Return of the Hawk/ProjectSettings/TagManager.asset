@@ -9,6 +9,7 @@ TagManager:
   - PlayerBullet
   - Enemy
   - GameManager
+  - Audio
   layers:
   - Default
   - TransparentFX
