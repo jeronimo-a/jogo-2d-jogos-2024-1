@@ -350,6 +350,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1087339173299540932, guid: 032ea816857f5644b92e05cbcca09406, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 6140141342535209333, guid: 032ea816857f5644b92e05cbcca09406, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.98
@@ -1086,7 +1090,7 @@ GameObject:
   - component: {fileID: 806524196}
   m_Layer: 0
   m_Name: TankParent
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1373,6 +1377,10 @@ PrefabInstance:
     - target: {fileID: 1087339173299540932, guid: 032ea816857f5644b92e05cbcca09406, type: 3}
       propertyPath: m_Name
       value: Tank
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087339173299540932, guid: 032ea816857f5644b92e05cbcca09406, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6140141342535209333, guid: 032ea816857f5644b92e05cbcca09406, type: 3}
       propertyPath: m_LocalPosition.x
