@@ -404,7 +404,7 @@ MonoBehaviour:
   levelRoom3: Level_2_3
   levelRoom4: Level_2_4
   levelRoom5: Level_2_5
-  levelFinalRoom: Level_2_choice
+  levelFinalRoom: Level_2_choices
 --- !u!1 &577479520
 GameObject:
   m_ObjectHideFlags: 0
