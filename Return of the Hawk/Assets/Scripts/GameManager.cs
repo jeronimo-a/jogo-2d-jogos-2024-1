@@ -13,10 +13,32 @@ public class GameManager : MonoBehaviour
     private float enemyMaxHealth = 20.0f;
     private float enemyHealth = 20.0f;
     private float enemyDamage = 10.0f;
+    private bool gameOver = false;
+    private bool paused = false;
     
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void PauseGame(bool pause)
+    {
+        paused = pause;
+    }
+
+    public void GameOver()
+    {
+        gameOver = true;
+    }
+
+    public bool IsGameOver()
+    {
+        return gameOver;
+    }
+
+    public bool IsPaused()
+    {
+        return paused;
     }
 
     public void ResetPlayerHealth()
