@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     public GameObject bullet;
 
     private float health;
-	private float speed = 1.0f;
+	  private float speed = 1.0f;
     private bool canShoot = true;
     private float timeBetweenShots = 0.5f;
     private float timer = 0.0f;
