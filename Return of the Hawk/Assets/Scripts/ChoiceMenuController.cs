@@ -16,17 +16,20 @@ public class ChoiceMenuController : MonoBehaviour {
         mainCanvas.SetActive(choiceRoom);
         roomController.choiceMade = !choiceRoom;
         gameManager = GameObject.FindGameObjectsWithTag("GameManager")[0].GetComponent<GameManager>();
+        gameManager.PauseGame(choiceRoom);
     }
 
     public void LeftButton() {
         mainCanvas.SetActive(false);
         roomController.choiceMade = true;
         gameManager.ResetPlayerHealth();
+        gameManager.PauseGame(false);
     }
 
     public void RightButton() {
         mainCanvas.SetActive(false);
         roomController.choiceMade = true;
         gameManager.IncrementPlayerArmor();
+        gameManager.PauseGame(false);
     }
 }
