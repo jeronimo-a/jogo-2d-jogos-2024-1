@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 
     private float health = 20.0f;
     private float damage = 10.0f;
-	  private float speed = 1.0f;
+    private float speed = 1.0f;
     private bool canShoot = true;
     private float timeBetweenShots = 0.5f;
     private float timer = 0.0f;
