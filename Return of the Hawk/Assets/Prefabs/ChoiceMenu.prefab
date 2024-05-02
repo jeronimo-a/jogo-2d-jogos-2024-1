@@ -830,6 +830,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6563147313502221704}
     m_Modifications:
+    - target: {fileID: 1620587597455234264, guid: 541e7acc5514550a790a4863cca687f1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bdf99bcda46bd553dba6623c34cbda40, type: 3}
     - target: {fileID: 3296053395173893764, guid: 541e7acc5514550a790a4863cca687f1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -914,6 +918,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftButton
       objectReference: {fileID: 0}
+    - target: {fileID: 3636237240551065112, guid: 541e7acc5514550a790a4863cca687f1, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 634197155f584da069203589b5e40a97, type: 3}
+    - target: {fileID: 3636237240551065112, guid: 541e7acc5514550a790a4863cca687f1, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dfd31e0e937f4be4b8f07fe48524e553, type: 3}
     - target: {fileID: 3636237240551065112, guid: 541e7acc5514550a790a4863cca687f1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
