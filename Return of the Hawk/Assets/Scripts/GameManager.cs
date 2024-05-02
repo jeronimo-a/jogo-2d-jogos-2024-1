@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private float playerHealth = 1000.0f;
+
+    private static float maxPlayerHealth = 1000.0f;
+
+    private float playerArmor = 0.0f;
+    private float playerHealth = maxPlayerHealth;
     private int playerMagazineAmmo = 12;
     private int playerReserveAmmo = 24;
     private float enemyHealth = 20.0f;
@@ -12,6 +16,12 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void ResetPlayerHealth()
+    {
+        playerHealth = maxPlayerHealth;
+        Debug.Log("curou");
     }
     
     public float GetPlayerHealth()
