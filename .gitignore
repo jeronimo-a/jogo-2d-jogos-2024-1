@@ -75,8 +75,6 @@ sysinfo.txt
 /Return of the Hawk/Assets/Thirdparty/
 *.psd
 *.png
-!*.psd.meta
-!*.png.meta
 
 # Rider generated files
 .idea/
