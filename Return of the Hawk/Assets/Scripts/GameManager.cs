@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    static public float playerMaxHealth = 500.0f;
-    static public float playerStartingArmor = 200.0f;
-    static public int playerArmorIncrement = 200;
+    static public float playerMaxHealth = 750.0f;
+    static public float playerStartingArmor = 250.0f;
+    static public float playerArmorIncrement = 250.0f;
     static public float playerBaseDamage = 10.0f;
     static public int playerMagazineSize = 12;
     static public int playerAmmoReserve = 24;
@@ -54,11 +54,6 @@ public class GameManager : MonoBehaviour
         playerArmor += playerArmorIncrement;
     }
     
-    public float GetPlayerHealth()
-    {
-        return playerHealth;
-    }
-    
     public void HealPlayer(float health)
     {
         playerHealth += health;
@@ -72,20 +67,20 @@ public class GameManager : MonoBehaviour
         return score;
     }
 
-    public int GetRoundedArmor() {
-        return (int) Mathf.Round(playerArmor);
+    public float GetPlayerArmor() {
+        return playerArmor;
     }
 
-    public int GetRoundedHealthPercentage() {
-        return (int) Mathf.Round(playerHealth / playerMaxHealth * 100);
+    public float GetPlayerHealth() {
+        return playerHealth;
     }
 
-    public int GetBulletsLoaded() {
-        return playerMagazineAmmo;
+    public float GetPlayerMaxHealth() {
+        return playerMaxHealth;
     }
 
-    public int GetBulletsAvailable() {
-        return playerReserveAmmo;
+    public float GetPlayerArmorIncrement() {
+        return playerArmorIncrement;
     }
     
     public float GetPlayerDamage()
