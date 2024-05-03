@@ -5,7 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     static private float playerMaxHealth = 500.0f;
-    private float playerArmor = 0.0f;
+    static private float playerStartArmor = 200.0f;
+    static private float playerArmorIncrement = 200.0f;
+    private float playerArmor = playerStartArmor;
     private float playerHealth = playerMaxHealth;
     private float playerDamage = 10.0f;
     private int playerMagazineAmmo = 12;
@@ -84,7 +86,16 @@ public class GameManager : MonoBehaviour
     
     public void TakeDamage(float damage)
     {
+        if (playerArmor >= damage) {
+            playerArmor -= damage;
+            damage = 0;
+        } else if (playerArmor >= 0) {
+            damage -= playerArmor;
+            playerArmor = 0;
+        }
         playerHealth -= damage;
+        if (playerHealth < 0)
+            playerHealth = 0;
     }
     
     public void PickUpAmmo(int ammo = 12)
