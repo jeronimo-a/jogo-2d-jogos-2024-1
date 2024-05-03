@@ -11,7 +11,6 @@ public class GameOverController : MonoBehaviour
     public bool gameover = false;
     public GameObject mainCanvas;
     public TextMeshProUGUI scoreDisplay;
-    public int score;
     private GameManager gameManager;
     private GameObject gameManagerObject;
 
@@ -36,7 +35,7 @@ public class GameOverController : MonoBehaviour
 
     void Update() {
         mainCanvas.SetActive(gameover);
-        scoreDisplay.text = score.ToString();
+        scoreDisplay.text = gameManager.GetScore().ToString();
         gameover = gameManager.IsGameOver();
     }
 }

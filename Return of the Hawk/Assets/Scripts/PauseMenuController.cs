@@ -11,7 +11,6 @@ public class PauseMenuController : MonoBehaviour {
     public bool paused = false;
     public GameObject mainCanvas;
     public TextMeshProUGUI currentScoreDisplay;
-    public int currentScore;
     private GameManager gameManager;
     private GameObject gameManagerObject;
 
@@ -40,6 +39,6 @@ public class PauseMenuController : MonoBehaviour {
             paused = true;
         }
         mainCanvas.SetActive(paused);
-        currentScoreDisplay.text = currentScore.ToString();
+        currentScoreDisplay.text = gameManager.GetScore().ToString();
     }
 }

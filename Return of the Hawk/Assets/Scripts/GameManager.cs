@@ -23,6 +23,10 @@ public class GameManager : MonoBehaviour
     private bool gameOver = false;
     private bool paused = false;
     private int score = 0;
+
+    public void IncrementScore() {
+        score++;
+    }
     
     void Awake()
     {

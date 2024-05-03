@@ -19,6 +19,10 @@ public class ChoiceMenuController : MonoBehaviour {
         gameManager.PauseGame(choiceRoom);
     }
 
+    void Update() {
+        currentScoreDisplay.text = gameManager.GetScore().ToString();
+    }
+
     public void LeftButton() {
         mainCanvas.SetActive(false);
         roomController.choiceMade = true;
