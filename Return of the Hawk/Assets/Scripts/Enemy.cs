@@ -6,8 +6,9 @@ public class Enemy : MonoBehaviour
 {
     public GameObject bullet;
 
-    private float health;
-	  private float speed = 1.0f;
+    private float health = 20.0f;
+    private float damage = 10.0f;
+	private float speed = 1.0f;
     private bool canShoot = true;
     private float timeBetweenShots = 0.5f;
     private float timer = 0.0f;
@@ -17,18 +18,26 @@ public class Enemy : MonoBehaviour
 
 	public void TakeDamage(float damage)
 	{
-        gameManager.TakeDamage(damage, "Enemy");
-        health = gameManager.GetEnemyHealth();
+        health -= damage;
 	}
+    
+    public float GetDamage()
+    {
+        return damage;
+    }
+    
+    public float GetHealth()
+    {
+        return health;
+    }
     
     void Start()
     {
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        health = gameManager.GetEnemyHealth();
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0;
         rb.angularDrag = 0;
         player = GameObject.Find("Player");
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
     
     void StopMoving()
@@ -60,7 +69,8 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        AutoMove();
+        if (!gameManager.IsPaused())
+            AutoMove();
     }
 
     void Update()
@@ -84,9 +94,10 @@ public class Enemy : MonoBehaviour
             }
         }
         
-        if (canShoot)
+        if (canShoot && !gameManager.IsPaused())
             Shoot();
 
-        AimToPlayer();
+        if (!gameManager.IsPaused())
+            AimToPlayer();
     }
 }

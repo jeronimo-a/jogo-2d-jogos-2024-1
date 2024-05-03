@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     private Animator dieAnimation;
     private GameManager gameManager;
     private float health;
+    private float damage = 10.0f;
 	private float speed = 3.0f;
     private bool canShoot = true;
     private float timeBetweenShots = 0.3f;
@@ -27,9 +28,14 @@ public class Player : MonoBehaviour
 
 	public void TakeDamage(float damage)
 	{
-        gameManager.TakeDamage(damage, "Player");
+        gameManager.TakeDamage(damage);
         health = gameManager.GetPlayerHealth();
 	}
+
+    public float GetDamage()
+    {
+        return damage;
+    }
     
     void Start()
     {
@@ -45,34 +51,41 @@ public class Player : MonoBehaviour
 
     void Move()
     {
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
-        float verticalInput = Input.GetAxisRaw("Vertical");
+        if (!gameManager.IsPaused())
+        {
+            float horizontalInput = Input.GetAxisRaw("Horizontal");
+            float verticalInput = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) ){
-            // audioManager.PlaySFX(audioManager.walk);
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) ){
+                // audioManager.PlaySFX(audioManager.walk);
+            }
+
+            Vector2 movement = new Vector2(horizontalInput, verticalInput).normalized * speed;
+            rb.MovePosition(rb.position + movement * Time.fixedDeltaTime);
+            walkAnimation.SetFloat("Speed",(Mathf.Abs(horizontalInput)) + (Mathf.Abs(verticalInput)));
         }
-
-        Vector2 movement = new Vector2(horizontalInput, verticalInput).normalized * speed;
-        rb.MovePosition(rb.position + movement * Time.fixedDeltaTime);
-        walkAnimation.SetFloat("Speed",(Mathf.Abs(horizontalInput)) + (Mathf.Abs(verticalInput)));
-        
-    
     }
     
     void RotateTowardsMouse()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 rotation = mousePos - transform.position;
-        float angle = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg + 90f;
-        transform.rotation = Quaternion.Euler(0, 0, angle);
+        if (!gameManager.IsPaused())
+        {
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 rotation = mousePos - transform.position;
+            float angle = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg + 90f;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
     }
     
     void Shoot()
     {
-        canShoot = false;
-        Instantiate(bullet, transform.position - transform.up / 3, transform.rotation);
-        bullet.SetActive(true);
-        audioManager.PlaySFX(audioManager.shot);
+        if (!gameManager.IsPaused())
+        {
+            canShoot = false;
+            Instantiate(bullet, transform.position - transform.up / 3, transform.rotation);
+            bullet.SetActive(true);
+            audioManager.PlaySFX(audioManager.shot);
+        }
     }
 
     void FixedUpdate()

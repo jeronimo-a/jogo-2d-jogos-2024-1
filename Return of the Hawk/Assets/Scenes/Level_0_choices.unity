@@ -249,6 +249,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6a18ef77d63bda408cb0f8154e335d2, type: 3}
+--- !u!114 &120497417 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7552617139947106132, guid: d6a18ef77d63bda408cb0f8154e335d2, type: 3}
+  m_PrefabInstance: {fileID: 120497416}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6fb47473d44bc842852c9fdd73684a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &130392657
 GameObject:
   m_ObjectHideFlags: 0
@@ -3816,6 +3827,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2082441556}
   m_SourcePrefab: {fileID: 100100000, guid: 4a2d97f89dac7277e8bb64d5d8b419bc, type: 3}
+--- !u!114 &2023637755 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5622517039794535301, guid: 4a2d97f89dac7277e8bb64d5d8b419bc, type: 3}
+  m_PrefabInstance: {fileID: 2023637754}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082441555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af5613dfc3428c2d08f3543f137da8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2082441555 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 218096612552297070, guid: 4a2d97f89dac7277e8bb64d5d8b419bc, type: 3}
@@ -3861,8 +3883,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1297293267214512078, guid: 19d0f7185dcc9ef1d89fdf4c2f0d7a48, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -189.2
+      value: -217
       objectReference: {fileID: 0}
+    - target: {fileID: 3745601608249896289, guid: 19d0f7185dcc9ef1d89fdf4c2f0d7a48, type: 3}
+      propertyPath: choiceRoom
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745601608249896289, guid: 19d0f7185dcc9ef1d89fdf4c2f0d7a48, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 120497417}
+    - target: {fileID: 3745601608249896289, guid: 19d0f7185dcc9ef1d89fdf4c2f0d7a48, type: 3}
+      propertyPath: roomController
+      value: 
+      objectReference: {fileID: 2023637755}
     - target: {fileID: 6128134278514375422, guid: 19d0f7185dcc9ef1d89fdf4c2f0d7a48, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

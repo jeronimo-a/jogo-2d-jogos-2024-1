@@ -657,7 +657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8fe4a663402277eaa9d948da1d1e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstGameScene: Level_1_0
+  firstGameScene: Level_0_choices
   highscore: 0
   highscoreNumberText: {fileID: 2028498926}
   Tutorial: Tutorial
