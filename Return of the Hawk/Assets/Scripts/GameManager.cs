@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     static private float playerMaxHealth = 500.0f;
     static private float playerStartArmor = 200.0f;
     static private float playerArmorIncrement = 200.0f;
+    static private float playerDamageIncrement = 1.2f;
     private float playerArmor = playerStartArmor;
     private float playerHealth = playerMaxHealth;
     private float playerDamage = 10.0f;
@@ -131,12 +132,14 @@ public class GameManager : MonoBehaviour
     
     public void ReplayabilityMultiplier()
     {
-        playerMaxHealth *= 1.2f;
-        playerDamage *= 1.2f;
         enemyMaxHealth *= 1.1f;
         enemyDamage *= 1.1f;
         GameObject.FindGameObjectWithTag("EnemyBullet").GetComponent<BulletEnemy>().UpdateDamage();
         GameObject.FindGameObjectWithTag("PlayerBullet").GetComponent<BulletPlayer>().UpdateDamage();
+    }
+
+    public void IncrementPlayerDamage() {
+        playerDamage *= playerDamageIncrement;
     }
 
     void Update()
