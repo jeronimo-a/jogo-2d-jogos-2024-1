@@ -26,7 +26,7 @@ public class ChoiceMenuController : MonoBehaviour {
     public void LeftButton() {
         mainCanvas.SetActive(false);
         roomController.choiceMade = true;
-        gameManager.ResetPlayerHealth();
+        gameManager.IncrementPlayerDamage();
         gameManager.PauseGame(false);
     }
 

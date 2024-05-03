@@ -154,12 +154,14 @@ public class GameManager : MonoBehaviour
     
     public void ReplayabilityMultiplier()
     {
-        playerMaxHealth *= 1.2f;
-        playerDamage *= 1.2f;
         enemyMaxHealth *= 1.1f;
         enemyDamage *= 1.1f;
         GameObject.FindGameObjectWithTag("EnemyBullet").GetComponent<BulletEnemy>().UpdateDamage();
         GameObject.FindGameObjectWithTag("PlayerBullet").GetComponent<BulletPlayer>().UpdateDamage();
+    }
+
+    public void IncrementPlayerDamage() {
+        playerDamage *= playerDamageIncrement;
     }
 
     void Update()
