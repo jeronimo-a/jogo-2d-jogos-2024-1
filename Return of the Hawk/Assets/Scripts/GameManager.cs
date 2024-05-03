@@ -84,6 +84,7 @@ public class GameManager : MonoBehaviour
     
     public void TakeDamage(float damage)
     {
+        Debug.Log(playerHealth);
         playerHealth -= damage;
     }
     
