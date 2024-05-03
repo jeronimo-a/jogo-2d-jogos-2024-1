@@ -9,6 +9,8 @@ public class MainMenuController : MonoBehaviour {
     public string firstGameScene;
     public string highscore;
     public TextMeshProUGUI highscoreNumberText;
+    public string Tutorial;
+    public string Settings;
 
     void Start() {
         highscoreNumberText.text = highscore.ToString();
@@ -16,9 +18,27 @@ public class MainMenuController : MonoBehaviour {
 
     public void PlayButton() {
         SceneManager.LoadScene(firstGameScene);
+        Debug.Log("Play Button Pressed");
     }
 
+    public void TutorialButton() {
+        SceneManager.LoadScene(Tutorial);
+        Debug.Log("Tutorial Button Pressed");
+    }
+
+    public void SettingsButton() {
+        SceneManager.LoadScene(Settings);
+        Debug.Log("Settings Button Pressed");
+    }
     public void QuitButton() {
-        Application.Quit();
+        Debug.Log("Quit Button Pressed");
+
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #elif UNITY_WEBGL
+            Application.OpenURL("about:blank");
+        #else
+            Application.Quit();
+        #endif
     }
 }

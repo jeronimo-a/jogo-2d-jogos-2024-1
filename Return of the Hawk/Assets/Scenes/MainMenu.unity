@@ -660,6 +660,8 @@ MonoBehaviour:
   firstGameScene: Level_1_0
   highscore: 0
   highscoreNumberText: {fileID: 2028498926}
+  Tutorial: Tutorial
+  Settings: Settings
 --- !u!1001 &1414355456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -671,7 +673,7 @@ PrefabInstance:
     - target: {fileID: 1620587597455234264, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 5c3138ab1a5166348b646c39a3e8f4b6, type: 3}
+      objectReference: {fileID: 21300000, guid: 1ebb9832fca6f354490df6a08327c47c, type: 3}
     - target: {fileID: 3296053395173893764, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -734,7 +736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3296053395173893764, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.9999943
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3296053395173893764, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -759,11 +761,27 @@ PrefabInstance:
     - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
       propertyPath: m_SpriteState.m_PressedSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1d39abe6fd568bd41aa186e891d46239, type: 3}
+      objectReference: {fileID: 21300000, guid: 62a5c32c6078f7249b6802e7eb408c0f, type: 3}
     - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
       propertyPath: m_SpriteState.m_HighlightedSprite
       value: 
-      objectReference: {fileID: 21300000, guid: c5fa38825b1b6384c88032dfe8c865f3, type: 3}
+      objectReference: {fileID: 21300000, guid: 335dc9fccce90af4a9b4b709f7422432, type: 3}
+    - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1289186688}
+    - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TutorialButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainMenuController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -798,8 +816,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2137113625}
-  - {fileID: 1587128659}
   - {fileID: 825235460}
+  - {fileID: 1587128659}
   - {fileID: 1689032234}
   m_Father: {fileID: 108077332}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -946,11 +964,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7715015233444153769, guid: c38e341c2f06de9fd9ecca94e4987704, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.00030517578
+      value: -0.00024414062
       objectReference: {fileID: 0}
     - target: {fileID: 7715015233444153769, guid: c38e341c2f06de9fd9ecca94e4987704, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.00021362305
+      value: -0.00018310547
       objectReference: {fileID: 0}
     - target: {fileID: 7715015233444153769, guid: c38e341c2f06de9fd9ecca94e4987704, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1079,11 +1097,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3296053395173893764, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -473.4082
+      value: -605.45
       objectReference: {fileID: 0}
     - target: {fileID: 3296053395173893764, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -103.02818
+      value: -172.86
       objectReference: {fileID: 0}
     - target: {fileID: 3296053395173893764, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1099,7 +1117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3537091740025861862, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
       propertyPath: m_Name
-      value: ExitButton
+      value: QuitButton
       objectReference: {fileID: 0}
     - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
       propertyPath: m_SpriteState.m_PressedSprite
@@ -1109,6 +1127,22 @@ PrefabInstance:
       propertyPath: m_SpriteState.m_HighlightedSprite
       value: 
       objectReference: {fileID: 21300000, guid: 9e3c2f45778e97647ab9c0247755861c, type: 3}
+    - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1289186688}
+    - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainMenuController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1218,6 +1252,22 @@ PrefabInstance:
       propertyPath: m_SpriteState.m_HighlightedSprite
       value: 
       objectReference: {fileID: 21300000, guid: 4c26561b23595843392177a81770340b, type: 3}
+    - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1289186688}
+    - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SettingsButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainMenuController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636237240551065112, guid: 254f935f659d010d9815510238e7bf3b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1512,7 +1562,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1738337383}
-  musicClip: {fileID: 8300000, guid: 9d734a218af4f114584f4cbd382896a8, type: 3}
+  SFXSource: {fileID: 0}
+  background: {fileID: 0}
+  shot: {fileID: 8300000, guid: f45179135327b3d4fa18c5f9147c990b, type: 3}
 --- !u!114 &2028498926 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9215825991478646182, guid: c38e341c2f06de9fd9ecca94e4987704, type: 3}
