@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private float playerMaxHealth = 1000.0f;
+    static private float playerMaxHealth = 500.0f;
     private float playerArmor = 0.0f;
-    private float playerHealth = 1000.0f;
+    private float playerHealth = playerMaxHealth;
     private float playerDamage = 10.0f;
     private int playerMagazineAmmo = 12;
     private int playerReserveAmmo = 24;
     private float enemyMaxHealth = 20.0f;
-    private float enemyHealth = 20.0f;
-    private float enemyDamage = 10.0f;
+    private float enemyHealth = 50.0f;
+    private float enemyDamage = 20.0f;
     private bool gameOver = false;
     private bool paused = false;
     
@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
 
     public void IncrementPlayerArmor()
     {
-        playerArmor += 1000;
+        playerArmor += 100;
         Debug.Log("armor");
     }
     
@@ -84,7 +84,6 @@ public class GameManager : MonoBehaviour
     
     public void TakeDamage(float damage)
     {
-        Debug.Log(playerHealth);
         playerHealth -= damage;
     }
     
