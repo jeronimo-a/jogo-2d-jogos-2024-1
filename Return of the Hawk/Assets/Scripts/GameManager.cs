@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     static public float playerMaxHealth = 750.0f;
     static public float playerStartingArmor = 250.0f;
     static public float playerArmorIncrement = 250.0f;
+    static public float playerDamageIncrement = 1.1f;
     static public float playerBaseDamage = 10.0f;
     static public int playerMagazineSize = 12;
     static public int playerAmmoReserve = 24;
