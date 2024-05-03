@@ -13,21 +13,25 @@ public class GameOverController : MonoBehaviour
     public TextMeshProUGUI scoreDisplay;
     public int score;
     private GameManager gameManager;
+    private GameObject gameManagerObject;
 
 
     public void QuitButton() {
         SceneManager.LoadScene(mainMenuScene);
+        Destroy(gameManagerObject);
     }
 
     public void RetryButton() {
         SceneManager.LoadScene(firstGameScene);
         gameover = false;
+        Destroy(gameManagerObject);
     }
 
     void Start() {
         gameover = false;
         mainCanvas.SetActive(false);
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        gameManagerObject = GameObject.FindGameObjectWithTag("GameManager");
+        gameManager = gameManagerObject.GetComponent<GameManager>();
     }
 
     void Update() {

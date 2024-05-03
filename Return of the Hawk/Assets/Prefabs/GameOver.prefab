@@ -394,7 +394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuScene: MainMenu
-  firstGameScene: Level_1_0
+  firstGameScene: Level_0_choices
   gameover: 0
   mainCanvas: {fileID: 407871179150074039}
   scoreDisplay: {fileID: 509041930148915282}

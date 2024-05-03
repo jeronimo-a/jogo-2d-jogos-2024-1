@@ -13,10 +13,12 @@ public class PauseMenuController : MonoBehaviour {
     public TextMeshProUGUI currentScoreDisplay;
     public int currentScore;
     private GameManager gameManager;
+    private GameObject gameManagerObject;
 
 
     public void QuitButton() {
         SceneManager.LoadScene(mainMenuScene);
+        Destroy(gameManagerObject);
     }
 
     public void ResumeButton() {
@@ -28,7 +30,8 @@ public class PauseMenuController : MonoBehaviour {
     void Start() {
         paused = false;
         mainCanvas.SetActive(false);
-        gameManager = GameObject.FindGameObjectsWithTag("GameManager")[0].GetComponent<GameManager>();
+        gameManagerObject = GameObject.FindGameObjectsWithTag("GameManager")[0];
+        gameManager = gameManagerObject.GetComponent<GameManager>();
     }
 
     void Update() {
