@@ -4,20 +4,30 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    static private float playerMaxHealth = 500.0f;
-    static private float playerStartArmor = 200.0f;
-    static private float playerArmorIncrement = 200.0f;
-    static private float playerDamageIncrement = 1.2f;
-    private float playerArmor = playerStartArmor;
+    static public float playerMaxHealth = 750.0f;
+    static public float playerStartingArmor = 250.0f;
+    static public float playerArmorIncrement = 250.0f;
+    static public float playerDamageIncrement = 1.1f;
+    static public float playerBaseDamage = 10.0f;
+    static public int playerMagazineSize = 12;
+    static public int playerAmmoReserve = 24;
+    static public float enemyMaxHealth = 20.0f;
+    static public float enemyBaseDamage = 20.0f;
+
+    private float playerArmor = playerStartingArmor;
     private float playerHealth = playerMaxHealth;
-    private float playerDamage = 10.0f;
-    private int playerMagazineAmmo = 12;
-    private int playerReserveAmmo = 24;
-    private float enemyMaxHealth = 20.0f;
-    private float enemyHealth = 50.0f;
-    private float enemyDamage = 20.0f;
+    private float playerDamage = playerBaseDamage;
+    private int playerMagazineAmmo = playerMagazineSize;
+    private int playerReserveAmmo = playerAmmoReserve;
+    private float enemyHealth = enemyMaxHealth;
+    private float enemyDamage = enemyBaseDamage;
     private bool gameOver = false;
     private bool paused = false;
+    private int score = 0;
+
+    public void IncrementScore() {
+        score++;
+    }
     
     void Awake()
     {
@@ -42,18 +52,11 @@ public class GameManager : MonoBehaviour
     public void ResetPlayerHealth()
     {
         playerHealth = playerMaxHealth;
-        Debug.Log("curou");
     }
 
     public void IncrementPlayerArmor()
     {
-        playerArmor += 100;
-        Debug.Log("armor");
-    }
-    
-    public float GetPlayerHealth()
-    {
-        return playerHealth;
+        playerArmor += playerArmorIncrement;
     }
     
     public void HealPlayer(float health)
@@ -63,6 +66,26 @@ public class GameManager : MonoBehaviour
         {
             playerHealth = playerMaxHealth;
         }
+    }
+
+    public int GetScore() {
+        return score;
+    }
+
+    public float GetPlayerArmor() {
+        return playerArmor;
+    }
+
+    public float GetPlayerHealth() {
+        return playerHealth;
+    }
+
+    public float GetPlayerMaxHealth() {
+        return playerMaxHealth;
+    }
+
+    public float GetPlayerArmorIncrement() {
+        return playerArmorIncrement;
     }
     
     public float GetPlayerDamage()
@@ -88,7 +111,7 @@ public class GameManager : MonoBehaviour
     public void TakeDamage(float damage)
     {
         if (playerArmor >= damage) {
-            playerArmor -= damage;
+            playerArmor -= (int) damage;
             damage = 0;
         } else if (playerArmor >= 0) {
             damage -= playerArmor;
